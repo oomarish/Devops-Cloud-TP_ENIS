@@ -1,7 +1,7 @@
 # Terraform block specifying required providers
 terraform {
   backend "s3" {
-    bucket         = "custom-terraform-state-bucket-123456-1c13b9b9" # Replace with your S3 bucket name
+    bucket         = "custom-terraform-state-bucket-123456-18f9130a" # Replace with your S3 bucket name
     key            = "aws-backend/main/terraform.tfstate"            # Location of the state file in the bucket
     region         = "us-east-1"                                     # AWS region
     dynamodb_table = "custom-terraform-state-locks-123456"           # Replace with your DynamoDB table name
