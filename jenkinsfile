@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     dir('my-terraform-project/remote-backend') {
-                        sh "terraform init -reconfigure"
+                        sh "terraform init"
                         // Apply Terraform configuration
                         sh "terraform apply --auto-approve"
                     }
@@ -90,9 +90,7 @@ pipeline {
 
                         // Update the HOST in the DATABASES section
                         sh """
-                        sed -i "/'HOST':/c\\
-                        'HOST': '${RDS_ENDPOINT}',"
-                        settings.py
+                        sed -i "/'HOST':/c\\        'HOST': '${RDS_ENDPOINT}'," settings.py
                         """
 
                         // Verify the DATABASES section after the update
